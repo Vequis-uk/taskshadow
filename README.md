@@ -114,5 +114,7 @@ TODO
 ## Future Enhancements (Post-MVP):
 * 
 
-
+## Credits
+* Logo: https://logo.com/
+* Code guide: https://www.youtube.com/watch?v=7tGZOq4ODNM
 
