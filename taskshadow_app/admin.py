@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import TaskShadowTodo
 
-# Register your models here.
+admin.site.reguster(TaskShadowTodo)
