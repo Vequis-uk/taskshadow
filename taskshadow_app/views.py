@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout as django_logout
+from .forms import CustomUserCreationForm, CustomUserAuthenticationForm
 
 #Model imports
 from .models import TaskShadowTodo
