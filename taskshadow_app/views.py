@@ -64,6 +64,6 @@ def user_login(request):
 
 #Logout View
 @login_required
-def logout(request):
+def user_logout(request):
     django_logout(request)
     return redirect('login')
