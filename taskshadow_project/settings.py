@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure--5v=sx$hq45183aodb9u!xy=)l+wyx1x6@3w)@*f$nmp^1!)%^
 # DEBUG = 'DEBUG' in os.environ Todo look at this
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['taskshadow-20be08825c40.herokuapp.com', 'localhost', '127.0.0.1']
 
 LOGIN_URL='login'
 
