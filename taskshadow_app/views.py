@@ -36,7 +36,6 @@ def delete_todo(request, todo_id):
     return redirect('todo_list')
 
 #Register View
-@login_required
 def register(request):
     if request.method == 'POST':
         form=CustomUserCreationForm(request.POST)
