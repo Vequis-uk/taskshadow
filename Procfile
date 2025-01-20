@@ -1,0 +1,1 @@
+web: gunicorn taskshadow_project.wsgi
