@@ -75,31 +75,12 @@ Todo Lists:
 | Password  | VARCHAR(255)| Not Null         |
 | IsAdmin   | BOOLEAN     | Default FALSE    |
 
-### User Flow Diagram
-```plaintext
-
-TODO
-
-```
-
 ## Prioritized Features for MVP:
-###User Authentication:
+
+### User Authentication:
 
 * Secure user registration and login functionality.
-
 * Password recovery options.
-
-### Movie Database Management:
-
-* Admin interface for adding, editing, and deleting movies.
-
-* Basic movie details: title, year, director, brief description, and poster image.
-
-### User Reviews and Ratings:
-
-* Ability for users to submit reviews and ratings for movies.
-
-* Display of average ratings and recent reviews on movie pages.
 
 ### Responsive Design:
 
@@ -108,13 +89,19 @@ TODO
 ### Privacy and Security:
 
 * Data protection measures to safeguard user information.
-
 * Compliance with privacy policies and terms of service.
 
 ## Future Enhancements (Post-MVP):
-* 
+
+* Moving / reordering tasks
+* Adding a priority rating on todo items, 1-10 or something with colours dependent of level, 1 green - 10 red
+
+## Resources:
+* https://miro.com/app/board/uXjVLwGurBo=/ - Miro board for planning and brainstorming
 
 ## Credits
 * Logo: https://logo.com/
-* Code guide: https://www.youtube.com/watch?v=7tGZOq4ODNM
+* Base code guide: https://www.youtube.com/watch?v=7tGZOq4ODNM
+* ChatGPT: helped create the tests.py tests
+* Bootstrap: Used for general styling
 
