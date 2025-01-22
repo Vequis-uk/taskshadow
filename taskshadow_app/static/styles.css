@@ -18,6 +18,17 @@ body {
     width: 100%;
 }
 
+.main-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.main-logo-container img {
+    border-radius: 20px;
+}
+
 /* Sidebar */
 .sidebar {
     background: linear-gradient(180deg, #34104b, #5c6bc0);
@@ -197,6 +208,7 @@ body {
         width: 90%;
     }
 }
+
 .completed {
     text-decoration: line-through;
     color: #aaa;
