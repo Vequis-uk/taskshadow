@@ -267,3 +267,16 @@ a:hover {
 ul.errorlist.nonfield {
     color: red;
 }
+
+/* Priority Styling */
+
+.high-priority {
+    color: red;
+    font-weight: bold;
+}
+.medium-priority {
+    color: orange;
+}
+.low-priority {
+    color: green;
+}

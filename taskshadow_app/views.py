@@ -9,7 +9,7 @@ from .models import TaskShadowTodo
 
 @login_required
 def todo_list(request):
-    todos = TaskShadowTodo.objects.filter(user=request.user)
+    todos = TaskShadowTodo.objects.filter(user=request.user).order_by('-priority', 'title')
     return render(request, 'todo_list.html', {'todos': todos})
 
 #Add To-do List View
@@ -17,8 +17,20 @@ def todo_list(request):
 def add_todo(request):
     if request.method == 'POST':
         title = request.POST.get('title')
-        TaskShadowTodo.objects.create(user=request.user, title=title)
+        priority = request.POST.get('priority', TaskShadowTodo.MEDIUM)
+        TaskShadowTodo.objects.create(user=request.user, title=title, priority=priority)
     return redirect('todo_list')
+
+#Update To-do priority
+@login_required
+def update_priority(request, todo_id):
+    todo = TaskShadowTodo.objects.get(id=todo_id, user=request.user)
+    if request.method == 'POST':
+        new_priority = request.POST.get('priority', TaskShadowTodo.MEDIUM)
+        todo.priority = new_priority
+        todo.save()
+        return redirect('todo_list')
+    return render(request, 'update_priority.html', {'todo': todo})
 
 #Mark Complete To-do List View
 @login_required

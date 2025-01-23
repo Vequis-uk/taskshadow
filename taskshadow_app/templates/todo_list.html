@@ -14,15 +14,27 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <div class="profile">
-      <img src="{% static 'images\taskshadow-logo.png' %}" alt="Profile" class="profile-img">
+      <img src="{% static 'images/taskshadow-logo.png' %}" alt="Profile" class="profile-img">
       <h2 class="profile-name">{{ user.username }}</h2>
       <p class="profile-email">{{ user.email }}</p>
-      <button class="btn-add"> <a href="{% url 'logout' %}">Logout</a></button>
+      <button class="btn-add"><a href="{% url 'logout' %}">Logout</a></button>
     </div>
     <div class="sidebar-actions">
       <form method="POST" action="{% url 'add_todo' %}">
         {% csrf_token %}
-        <input type="text" name="title" placeholder="New Todo" class="search-input" required>
+        <label>
+          <input type="text" name="title" placeholder="New Todo" class="search-input" required>
+        </label>
+        <div class="priority-container">
+          <label>
+            <span>Priority:</span>
+            <select name="priority" class="priority-select">
+              <option value="High">High</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </label>
+        </div>
         <button type="submit" class="btn-add">
           <i class="bi bi-plus-circle"></i> Add Todo
         </button>
@@ -40,18 +52,32 @@
       {% for todo in todos %}
       <div class="todo-item {% if todo.completed %}completed{% endif %}">
         <span class="todo-text">{{ todo.title }}</span>
+        <span class="todo-priority">Priority: {{ todo.get_priority_display }}</span>
         <div class="todo-actions">
+          <!-- Mark Complete/Incomplete -->
           <form method="POST" action="{% url 'complete_todo' todo.id %}" style="display:inline;">
             {% csrf_token %}
             <button type="submit" style="background:none; border:none;">
               <i class="bi {% if todo.completed %}bi-check-circle-fill{% else %}bi-check-circle{% endif %}"></i>
             </button>
           </form>
+          <!-- Delete To-do -->
           <form method="POST" action="{% url 'delete_todo' todo.id %}" style="display:inline;">
             {% csrf_token %}
             <button type="submit" style="background:none; border:none;">
               <i class="bi bi-trash"></i>
             </button>
+          </form>
+          <!-- Update Priority -->
+          <form method="POST" action="{% url 'update_priority' todo.id %}" style="display:inline;">
+            {% csrf_token %}
+            <label>
+              <select name="priority" onchange="this.form.submit()" class="priority-select">
+                <option value="High" {% if todo.priority == "High" %}selected{% endif %}>High</option>
+                <option value="Medium" {% if todo.priority == "Medium" %}selected{% endif %}>Medium</option>
+                <option value="Low" {% if todo.priority == "Low" %}selected{% endif %}>Low</option>
+              </select>
+            </label>
           </form>
         </div>
       </div>

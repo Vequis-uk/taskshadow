@@ -9,4 +9,6 @@ urlpatterns = [
     path('todo/<int:todo_id>/delete/', views.delete_todo, name='delete_todo'),
     path('todo/<int:todo_id>/complete/', views.mark_complete, name='complete_todo'),
     path('add/', views.add_todo, name='add_todo'),
+    path('update-priority/<int:todo_id>/', views.update_priority, name='update_priority'),
+
 ]
