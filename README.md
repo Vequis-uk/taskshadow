@@ -61,6 +61,10 @@ Todo Lists:
 
 ## Testing / Unit Testing:
 * I used ChatGPT to write the tests for the TaskShadowTodo Model ensuring functionality is as expected
+* Results of the tests can be seen below:
+
+![image](https://github.com/user-attachments/assets/3af7cb4d-3044-4576-9d2c-5cd7fbe6f65b)
+
 
 ## User Registration and Login:
 ### User
