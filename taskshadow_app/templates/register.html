@@ -1,4 +1,15 @@
 {% load static %}
+
+{% if messages %}
+<div id="message-container">
+    {% for message in messages %}
+    <div class="message alert {{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,4 +34,5 @@
     </div>
 </div>
 </body>
+<script src="{% static 'js/messages.js' %}"></script>
 </html>
