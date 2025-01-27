@@ -11,7 +11,8 @@ from .models import TaskShadowTodo
 
 @login_required
 def todo_list(request):
-    todos = TaskShadowTodo.objects.filter(user=request.user).order_by('-priority', 'title')
+    todos = TaskShadowTodo.objects.filter(user=request.user).order_by(
+        '-priority', 'title')
     return render(request, 'todo_list.html', {'todos': todos})
 
 
@@ -21,7 +22,8 @@ def add_todo(request):
     if request.method == 'POST':
         title = request.POST.get('title')
         priority = request.POST.get('priority', TaskShadowTodo.MEDIUM)
-        TaskShadowTodo.objects.create(user=request.user, title=title, priority=priority)
+        TaskShadowTodo.objects.create(
+            user=request.user, title=title, priority=priority)
         messages.success(request, "Todo added successfully!")
     else:
         messages.error(request, "Failed to add Todo. Please try again.")
@@ -36,7 +38,8 @@ def update_priority(request, todo_id):
         new_priority = request.POST.get('priority', TaskShadowTodo.MEDIUM)
         todo.priority = new_priority
         todo.save()
-        messages.success(request, f"Priority for '{todo.title}' updated successfully!")
+        messages.success(
+            request, f"Priority for '{todo.title}' updated successfully!")
         return redirect('todo_list')
     return render(request, 'update_priority.html', {'todo': todo})
 
@@ -73,7 +76,9 @@ def register(request):
             messages.success(request, "Registration successful! Welcome!")
             return redirect('todo_list')
         else:
-            messages.error(request, "Registration failed. Please check the form and try again.")
+            messages.error(
+                request,
+                "Registration failed. Please check the form and try again.")
     else:
         form = CustomUserCreationForm()
     return render(request, 'register.html', {'form': form})
@@ -89,7 +94,9 @@ def user_login(request):
             messages.success(request, "Login successful! Welcome back!")
             return redirect('todo_list')
         else:
-            messages.error(request, "Login failed. Please check your username and password.")
+            messages.error(
+                request,
+                "Login failed. Please check your username and password.")
     else:
         form = CustomUserAuthenticationForm()
     return render(request, 'login.html', {'form': form})

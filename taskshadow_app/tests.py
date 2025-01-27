@@ -2,12 +2,14 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from .models import TaskShadowTodo
 
+
 class TaskShadowTodoModelTest(TestCase):
 
     @classmethod
     def setUpTestData(cls):
         # Create a user to associate with the tasks
-        cls.user = User.objects.create_user(username='testuser', password='testpass')
+        cls.user = User.objects.create_user(
+            username='testuser', password='testpass')
         # Create a sample task
         cls.task = TaskShadowTodo.objects.create(
             user=cls.user,
@@ -33,4 +35,5 @@ class TaskShadowTodoModelTest(TestCase):
             user=self.user,
             title="Another Task"
         )
-        self.assertFalse(new_task.completed)  # Default value for `completed` is False
+        self.assertFalse(new_task.completed)
+        # Default value for `completed` is False
