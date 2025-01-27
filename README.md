@@ -1,5 +1,6 @@
 # TaskShadow - Your tasks, always by your side.
 
+![taskshadow-logo](https://github.com/user-attachments/assets/dc6e788f-40b2-450d-9da1-01aba3b927d1)
 
 ## Purpose and Target Audience
 
@@ -12,6 +13,12 @@ TaskShadow is mainly aimed at adults who want to manage their workloads with eas
 ## Problem Statement:
 
 How can TaskShadow provide a good user experience for users looking to manage their todo lists?
+
+## The Design
+* Design was to be kept simple and easy for users to understand and use the application
+* Design was also kept simple to keep the project managable within the time allocated
+* The design, wireframes and other design elements can be seen below
+https://miro.com/app/board/uXjVLwGurBo=/
 
 ## MVP Features
 
@@ -52,6 +59,9 @@ Todo Lists:
 * As a user, I want to delete tasks so that I can remove tasks I no longer need.
 * As a user, I want to categorize my tasks by priority or type so that I can focus on what's most important.
 
+## Testing / Unit Testing:
+* I used ChatGPT to write the tests for the TaskShadowTodo Model ensuring functionality is as expected
+
 ## User Registration and Login:
 ### User
 
@@ -67,7 +77,7 @@ Todo Lists:
   
 * User logs in with verified credentials.
 
-### Users Table                                  TODO UPDATE THIS
+### Users Table
 | Attribute | Data Type   | Description      |
 |-----------|-------------|------------------|
 | UserID    | INT         | Primary Key      |
@@ -104,4 +114,5 @@ Todo Lists:
 * Base code guide: https://www.youtube.com/watch?v=7tGZOq4ODNM
 * ChatGPT: helped create the tests.py tests
 * Bootstrap: Used for general styling
+* Used ChatGPT to write the tests for the TaskShadowTodo Model
 
