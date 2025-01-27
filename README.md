@@ -65,6 +65,25 @@ Todo Lists:
 
 ![image](https://github.com/user-attachments/assets/3af7cb4d-3044-4576-9d2c-5cd7fbe6f65b)
 
+## Validation:
+# https://validator.w3.org/ | Markup Validation Service
+![image](https://github.com/user-attachments/assets/927a94c2-67ab-4b92-a2dc-8be98b719e98)
+
+# https://jigsaw.w3.org/css-validator/ | CSS Validation Service
+![image](https://github.com/user-attachments/assets/ac505a62-8755-4a84-80c6-b3358f3a38a7)
+
+# https://pep8ci.herokuapp.com/ | CI Python Linter
+![image](https://github.com/user-attachments/assets/4886b5ff-7bea-4e54-aeff-6402bd539c2f)
+![image](https://github.com/user-attachments/assets/f5df70d9-3cba-4e3c-8017-691a2b3f84a4)
+![image](https://github.com/user-attachments/assets/900449f3-6eca-4ea4-8a9d-ff8f3feb2078)
+![image](https://github.com/user-attachments/assets/df48d53a-2752-46ff-ad19-9310012114d9)
+
+# https://jshint.com/ | JS Validation
+
+
+# https://wave.webaim.org/ | Web Accessibility Evaluation Tool
+![image](https://github.com/user-attachments/assets/77fe671c-14e7-4a5e-b912-bfa776d10efa)
+
 
 ## User Registration and Login:
 ### User
@@ -113,10 +132,18 @@ Todo Lists:
 ## Resources:
 * https://miro.com/app/board/uXjVLwGurBo=/ - Miro board for planning and brainstorming
 
+## AI Usage
+* I used AI to help create the CSS styling for the popup messages for user feedback
+* I used AI to write the tests for the TaskShadowTodo Model
+* I used AI to help debug issues such as:
+  * Issue with static files, where I had to remove and readd them as there was some sort of conflict
+  * Issues with login redirecting when not required, the issue was due to a typo in my view registration
+  * Heroku deployment issue due to gunicorn missing
+
 ## Credits
 * Logo: https://logo.com/
 * Base code guide: https://www.youtube.com/watch?v=7tGZOq4ODNM
-* ChatGPT: helped create the tests.py tests
+* ChatGPT
+* GitHub Copilot
 * Bootstrap: Used for general styling
-* Used ChatGPT to write the tests for the TaskShadowTodo Model
 
