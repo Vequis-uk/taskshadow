@@ -59,6 +59,9 @@ Todo Lists:
 * As a user, I want to delete tasks so that I can remove tasks I no longer need.
 * As a user, I want to categorize my tasks by priority or type so that I can focus on what's most important.
 
+## Testing / Unit Testing:
+* I used ChatGPT to write the tests for the TaskShadowTodo Model ensuring functionality is as expected
+
 ## User Registration and Login:
 ### User
 
@@ -74,7 +77,7 @@ Todo Lists:
   
 * User logs in with verified credentials.
 
-### Users Table                                  TODO UPDATE THIS
+### Users Table
 | Attribute | Data Type   | Description      |
 |-----------|-------------|------------------|
 | UserID    | INT         | Primary Key      |
