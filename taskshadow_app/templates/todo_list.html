@@ -18,7 +18,7 @@
   <title>Todo List</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
   <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
 </head>
 <body>
@@ -29,7 +29,7 @@
       <img src="{% static 'images/taskshadow-logo.png' %}" alt="Profile" class="profile-img">
       <h2 class="profile-name">{{ user.username }}</h2>
       <p class="profile-email">{{ user.email }}</p>
-      <button class="btn-add"><a href="{% url 'logout' %}">Logout</a></button>
+      <button class="btn-add"><a href="{% url 'logout' %}" aria-label="logout button">Logout</a></button>
     </div>
     <div class="sidebar-actions">
       <form method="POST" action="{% url 'add_todo' %}">
@@ -47,7 +47,7 @@
             </select>
           </label>
         </div>
-        <button type="submit" class="btn-add">
+        <button type="submit" class="btn-add" aria-label="todo submission button">
           <i class="bi bi-plus-circle"></i> Add Todo
         </button>
       </form>
@@ -69,14 +69,14 @@
           <!-- Mark Complete/Incomplete -->
           <form method="POST" action="{% url 'complete_todo' todo.id %}" style="display:inline;">
             {% csrf_token %}
-            <button type="submit" style="background:none; border:none;">
+            <button type="submit" style="background:none; border:none;" aria-label="check todo done button">
               <i class="bi {% if todo.completed %}bi-check-circle-fill{% else %}bi-check-circle{% endif %}"></i>
             </button>
           </form>
           <!-- Delete To-do -->
           <form method="POST" action="{% url 'delete_todo' todo.id %}" style="display:inline;">
             {% csrf_token %}
-            <button type="submit" style="background:none; border:none;">
+            <button type="submit" style="background:none; border:none;" aria-label="delete todo button">
               <i class="bi bi-trash"></i>
             </button>
           </form>

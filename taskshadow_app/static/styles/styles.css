@@ -345,3 +345,10 @@ ul.errorlist.nonfield {
     }
 }
 
+/* Dropdown Settings */
+
+.priority-select {
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
