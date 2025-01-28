@@ -81,10 +81,11 @@ Todo Lists:
 # https://jshint.com/ | JS Validation
 ![image](https://github.com/user-attachments/assets/f4f754dd-4258-4a09-ba2b-786c9a0ccfed)
 
-
 # https://wave.webaim.org/ | Web Accessibility Evaluation Tool
 ![image](https://github.com/user-attachments/assets/77fe671c-14e7-4a5e-b912-bfa776d10efa)
 
+# Lighthouse Testing
+![image](https://github.com/user-attachments/assets/1577dc9d-7bbd-425e-bda6-4be1645fdd69)
 
 ## User Registration and Login:
 ### User
