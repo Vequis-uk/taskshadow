@@ -352,3 +352,9 @@ ul.errorlist.nonfield {
     border: 1px solid black;
     border-radius: 5px;
 }
+
+.priority-container {
+    margin-bottom: 7px;
+    display: flex;
+    justify-content: center;
+}
