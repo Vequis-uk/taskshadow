@@ -53,16 +53,18 @@ Todo Lists:
 
 ## User Stories:
 
-* As a user, I want to create tasks with titles, descriptions, and deadlines so that I can organize my work efficiently.
-* As a user, I want to mark tasks as completed so that I can track my progress.
-* As a user, I want to edit task details so that I can update information if my plans change.
-* As a user, I want to delete tasks so that I can remove tasks I no longer need.
-* As a user, I want to categorize my tasks by priority or type so that I can focus on what's most important.
+* As a user, I want to be able to create an account
+* As a user, I want to be able to login to my account
+* As a user, I want to be able to add todos to a list
+* As a user, I want to be able to set the priority of a todo when creating it
+* As a user, I want to be able to mark my todos as complete
+* As a user, I want to be able to delete todos
+* As a user, I want to be able to set a priority on current todos
+* As a user, I want to be able to log out of my account
 
 ## Testing / Unit Testing:
 * I used ChatGPT to write the tests for the TaskShadowTodo Model ensuring functionality is as expected
 * Results of the tests can be seen below:
-
 ![image](https://github.com/user-attachments/assets/3af7cb4d-3044-4576-9d2c-5cd7fbe6f65b)
 
 ## Validation:
