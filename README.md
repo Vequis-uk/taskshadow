@@ -271,7 +271,7 @@ Helped refactor repetitive form handling logic into reusable components. AI high
 AI recommended media query adjustments and utility-first CSS techniques to improve responsiveness without bloating the stylesheet.
 
 ### 5. Reflection on AI Integration
-Using AI throughout this project drastically improved my development workflow. It served as a real-time pair programming assistant—offering not only direct solutions but also valuable explanations that helped me understand best practices.
+Using AI throughout this project drastically improved my development workflow. It served as a real-time pair programming assistant, offering not only direct solutions but also valuable explanations that helped me understand best practices and sped up development time especially around markup allowing me to focus on harder sections of the project.
 
 The ability to debug faster, test more comprehensively, and style more confidently allowed me to maintain momentum without frequent context-switching to external documentation. Importantly, AI helped reinforce my understanding of Django and frontend principles through conversational learning.
 
