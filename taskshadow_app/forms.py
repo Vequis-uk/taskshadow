@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 
+from taskshadow_app.models import TaskShadowTodo
+
 
 class CustomUserAuthenticationForm(AuthenticationForm):
     username = forms.CharField(
@@ -45,3 +47,12 @@ class CustomUserCreationForm(forms.ModelForm):
         if password1 and password2 and password1 != password2:
             raise forms.ValidationError('Passwords do not match')
         return password2
+
+# New form for updating the to-do titles
+class TodoUpdateForm(forms.ModelForm):
+    class Meta:
+        model = TaskShadowTodo
+        fields = ['title']
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'edit-title-input'})
+        }

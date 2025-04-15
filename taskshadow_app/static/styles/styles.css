@@ -358,3 +358,18 @@ ul.errorlist.nonfield {
     display: flex;
     justify-content: center;
 }
+
+/* Editing to-do titles */
+
+.edit-title-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.edit-title-input {
+    border: 1px solid #ccc;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+}

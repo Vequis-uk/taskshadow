@@ -14,5 +14,6 @@ urlpatterns = [
     path(
         'update-priority/<int:todo_id>/',
         views.update_priority, name='update_priority'),
+    path('update-title/<int:todo_id>/', views.update_todo_title, name='update_todo_title'),
 
 ]

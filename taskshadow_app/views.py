@@ -3,7 +3,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout as django_logout
 from django.contrib import messages
-from .forms import CustomUserCreationForm, CustomUserAuthenticationForm
+from .forms import CustomUserCreationForm, CustomUserAuthenticationForm, TodoUpdateForm
 
 # Model imports
 from .models import TaskShadowTodo
@@ -63,6 +63,14 @@ def delete_todo(request, todo_id):
     messages.success(request, f"Todo '{todo.title}' deleted successfully!")
     return redirect('todo_list')
 
+# Added new form to be able to update the to-do titles
+def update_todo_title(request, todo_id):
+    todo = get_object_or_404(TaskShadowTodo, id=todo_id)
+    if request.method == 'POST':
+        form = TodoUpdateForm(request.POST, instance=todo)
+        if form.is_valid():
+            form.save()
+    return redirect('todo_list')
 
 # Register View
 def register(request):

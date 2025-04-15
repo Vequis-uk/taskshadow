@@ -62,6 +62,14 @@
 
     <div class="todo-list">
       {% for todo in todos %}
+      <!-- Edit To-do Title Form -->
+      <form method="POST" action="{% url 'update_todo_title' todo.id %}" class="edit-title-form">
+        {% csrf_token %}
+        <label>
+          <input type="text" name="title" value="{{ todo.title }}" class="edit-title-input">
+        </label>
+        <button type="submit" class="btn-edit" aria-label="save edited title"><i class="bi bi-save"></i></button>
+      </form>
       <div class="todo-item {% if todo.completed %}completed{% endif %}">
         <span class="todo-text">{{ todo.title }}</span>
         <span class="todo-priority">Priority: {{ todo.get_priority_display }}</span>
