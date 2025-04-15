@@ -63,6 +63,7 @@
     <div class="todo-list">
       {% for todo in todos %}
       <!-- Edit To-do Title Form -->
+      <h3>Edit:</h3>
       <form method="POST" action="{% url 'update_todo_title' todo.id %}" class="edit-title-form">
         {% csrf_token %}
         <label>
