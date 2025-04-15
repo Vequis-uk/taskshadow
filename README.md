@@ -137,13 +137,13 @@ Todo Lists:
 * https://miro.com/app/board/uXjVLwGurBo=/ - Miro board for planning and brainstorming
 
 ## Deployment:
-# 1. Install Required Packages
+### 1. Install Required Packages
   * In your project folder:
     * pip install gunicorn psycopg2-binary whitenoise dj-database-url
   * Then add them to your requirements.txt:
     * pip freeze > requirements.txt
       
-# 2. Update settings.py
+### 2. Update settings.py
 * Add allowed hosts:
   * ALLOWED_HOSTS = ['your-app-name.herokuapp.com', 'localhost', '127.0.0.1']
 * Set up static files for production:
@@ -152,42 +152,42 @@ Todo Lists:
 * Add middleware for WhiteNoise (for serving static files):
   * MIDDLEWARE = ['whitenoise.middleware.WhiteNoiseMiddleware', ]
 
-# 3. Create Procfile
+### 3. Create Procfile
 * In the root of your project directory, create a file called Procfile (no extension), and add:
   * web: gunicorn taskshadow.wsgi (change project name accordingly, taskshadow in this case)
 
-# 4. Initialize Git (if not already done)
+### 4. Initialize Git (if not already done)
 * git init
 * git add .
 * git commit -m "Initial commit"
 
-# 5. Create the Heroku App
+### 5. Create the Heroku App
 * heroku login
 * heroku create taskshadow (again, change name accordingly)
 
-# 6. Set Config Vars
+### 6. Set Config Vars
 * heroku config:set SECRET_KEY='your-secret-key'
 * heroku config:set DEBUG=False
 * this can also be added in the settings on the Heroku webpage
 
-# 7. Push to Heroku
+### 7. Push to Heroku
 * git push heroku master (change branch name accordingly)
 
-# 8. Run Migrations and Collect Static Files
+### 8. Run Migrations and Collect Static Files
 * heroku run python manage.py migrate
 * heroku run python manage.py collectstatic --noinput
 
-# 9. Visit The Site
+### 9. Visit The Site
 * heroku open
 * this can also be done via the heroku webpage
 
-# If there are any issues see the webpage and look at the logs under more at the top right once you are inside the project.
+### If there are any issues see the webpage and look at the logs under more at the top right once you are inside the project.
 
-## AI Usage
-# 1. Code Creation and Enhancement
+# AI Usage
+### 1. Code Creation and Enhancement
 AI was instrumental in generating and refining several parts of the codebase, especially in areas where rapid prototyping and best practices were important:
 
-# 2. CSS Styling for User Feedback Popups
+### 2. CSS Styling for User Feedback Popups
 I used ChatGPT to help create responsive and visually distinct CSS styles for popup messages that display user feedback (e.g., success, error, and warning messages). For instance, I was able to generate transition effects and styling templates that improved visibility while maintaining a non-intrusive UI experience. The AI suggested using @keyframes with subtle fade-ins and slide-ins, and helped fine-tune box shadows and color palettes that aligned with accessibility standards.
 
 Example (from styles.css):
@@ -207,7 +207,7 @@ Example (from styles.css):
     font-size: 1rem;
 }
 
-# New Form-Based Task Editing Feature
+### New Form-Based Task Editing Feature
 The introduction of a form-based approach for editing task titles was heavily assisted by ChatGPT. AI guided the restructuring of the frontend to support inline editing with form validation, and also helped refactor the backend view logic to process updates conditionally and handle errors gracefully.
 
 ChatGPT provided suggestions on:
@@ -220,16 +220,16 @@ CSRF token handling
 
 Preserving user input on failed submissions
 
-# 2. Debugging and Troubleshooting
+### 2. Debugging and Troubleshooting
 AI played a critical role in debugging several issues throughout the development process. Key examples include:
 
-# Static Files Conflict
+### Static Files Conflict
 I encountered an issue where static files were not being served correctly due to a conflict caused by a previous misconfiguration. ChatGPT suggested clearing and re-adding the static files while checking the STATICFILES_DIRS and collectstatic flow, which ultimately resolved the issue.
 
-# Login Redirection Bug
+### Login Redirection Bug
 A typo in a view registration was causing unexpected login redirects. ChatGPT helped trace the problem by walking through the LOGIN_REDIRECT_URL logic and recommended using Django’s reverse_lazy for better URL management.
 
-# Heroku Deployment Issue (Gunicorn)
+### Heroku Deployment Issue (Gunicorn)
 An error related to gunicorn missing during deployment was resolved with AI assistance. It identified that gunicorn needed to be listed in requirements.txt and reminded me to include a Procfile. The fix involved running:
 
 bash
@@ -261,21 +261,21 @@ def test_task_string_representation(self):
 4. Code Optimization
 ChatGPT was used to recommend optimizations in areas such as:
 
-# Query Efficiency
+### Query Efficiency
 Suggested the use of .select_related() and .prefetch_related() in views dealing with task-user relationships to reduce the number of database hits and improve performance.
 
-# Form Handling and DRY Principles
+### Form Handling and DRY Principles
 Helped refactor repetitive form handling logic into reusable components. AI highlighted opportunities to extract common logic into mixins or utility functions.
 
-# Responsive Design Improvements
+### Responsive Design Improvements
 AI recommended media query adjustments and utility-first CSS techniques to improve responsiveness without bloating the stylesheet.
 
-# 5. Reflection on AI Integration
+### 5. Reflection on AI Integration
 Using AI throughout this project drastically improved my development workflow. It served as a real-time pair programming assistant—offering not only direct solutions but also valuable explanations that helped me understand best practices.
 
 The ability to debug faster, test more comprehensively, and style more confidently allowed me to maintain momentum without frequent context-switching to external documentation. Importantly, AI helped reinforce my understanding of Django and frontend principles through conversational learning.
 
-## Credits
+# Credits
 * Logo: https://logo.com/
 * Base code guide: https://www.youtube.com/watch?v=7tGZOq4ODNM
 * ChatGPT
